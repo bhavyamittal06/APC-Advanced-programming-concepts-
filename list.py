@@ -15,18 +15,18 @@ colors[1] = "brown"
 print(colors[1])
 
 #4th 
-numbers = [ 10, 20 , 30 , 40]
-numbers.append[4] = 50
-numbers.append[0] = 5
-numbers.append[2] = 15
+numbers = [10, 20, 30, 40]
 
+numbers.append(50)     # add at end
+numbers.insert(0, 5)   # add at index 0
+numbers.insert(2, 15)  # add at index 2
 print(numbers)
+
 
 #5th 
 students = [ "bhavya", " riya " ,"siya" , "diya"]
-students.pop [0]
-students.pop [3]
-students.pop [2]
+students.pop (0)
+students.pop (2)
 
 print(students)
 
