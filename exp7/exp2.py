@@ -321,3 +321,4 @@ if sorted(str1) == sorted(str2):
     print("The strings are Anagrams.")
 else:
     print("The strings are Not Anagrams.")
+

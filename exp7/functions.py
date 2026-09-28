@@ -395,7 +395,7 @@ totals = []
 
 for name, roll, marks in students:
     total = sum(marks)
-    percentage = total /100
+    percentage = total / 5
     totals.append(total)
 
     print("Name:", name)
