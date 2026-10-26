@@ -1,0 +1,5 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="card"><h1>Welcome, {{ user.username }}!</h1><p class="lead">Login was successful. This protected page is available only to authenticated users.</p>
+<p><strong>Email:</strong> {{ user.email }}</p><a class="button" href="{% url 'logout' %}">Logout</a></section>
+{% endblock %}

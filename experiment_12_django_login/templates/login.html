@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="card"><h1>Login</h1><p class="lead">Enter your registered username and password.</p>
+<form method="post">{% csrf_token %}{{ form.non_field_errors }}
+{% for field in form %}<label for="{{ field.id_for_label }}">{{ field.label }}</label>{{ field }}{{ field.errors }}{% endfor %}
+<p style="margin-top:22px"><button type="submit">Login</button></p></form><p>New user? <a href="{% url 'register' %}">Register here</a>.</p></section>
+{% endblock %}

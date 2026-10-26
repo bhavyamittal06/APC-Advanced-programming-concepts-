@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="card"><h1>Register</h1><p class="lead">All fields are validated before the account is created.</p>
+<form method="post">{% csrf_token %}{{ form.non_field_errors }}
+{% for field in form %}<label for="{{ field.id_for_label }}">{{ field.label }}</label>{{ field }}{% if field.help_text %}<div class="helptext">{{ field.help_text }}</div>{% endif %}{{ field.errors }}{% endfor %}
+<p style="margin-top:22px"><button type="submit">Register</button></p></form></section>
+{% endblock %}

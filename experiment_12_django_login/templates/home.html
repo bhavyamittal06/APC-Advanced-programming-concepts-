@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="card">
+  <h1>Django User Login and Regex Validation</h1>
+  <p class="lead">This application demonstrates user registration, secure login/logout and regular-expression validation for username, email and password fields.</p>
+  {% if user.is_authenticated %}<a class="button" href="{% url 'dashboard' %}">Open dashboard</a>{% else %}<a class="button" href="{% url 'register' %}">Create account</a><a class="button secondary" href="{% url 'login' %}">Login</a>{% endif %}
+</section>
+{% endblock %}

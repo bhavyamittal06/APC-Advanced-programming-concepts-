@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experiment 12 - Django Login</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; font-family: Arial, sans-serif; color: #17223b; background: #f3f6fb; }
+    nav { padding: 16px max(6vw, 24px); display: flex; justify-content: space-between; align-items: center; background: #17223b; color: #fff; }
+    nav a { color: #fff; text-decoration: none; margin-left: 16px; font-weight: 600; }
+    main { width: min(90%, 650px); margin: 52px auto; }
+    .card { background: #fff; padding: 32px; border-radius: 16px; box-shadow: 0 12px 32px #17223b1a; }
+    h1 { margin-top: 0; color: #1a4f9c; } .lead { color: #50627d; line-height: 1.6; }
+    label { display: block; margin: 16px 0 6px; font-weight: 700; } input { width: 100%; padding: 11px; border: 1px solid #b9c7dc; border-radius: 7px; font-size: 15px; }
+    button, .button { display: inline-block; background: #1a4f9c; color: #fff; padding: 11px 18px; border: 0; border-radius: 7px; font-size: 15px; text-decoration: none; cursor: pointer; }
+    .button.secondary { background: #e5edf9; color: #1a4f9c; margin-left: 8px; } .helptext { color: #667892; font-size: 13px; }
+    .errorlist { color: #b42318; margin: 5px 0; padding-left: 18px; } .message { padding: 12px; background: #dff5e8; border-radius: 7px; margin-bottom: 18px; }
+    code { background: #edf2fa; padding: 2px 4px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <nav>
+    <strong>Experiment 12: Django Login</strong>
+    <span>
+      <a href="{% url 'home' %}">Home</a>
+      {% if user.is_authenticated %}<a href="{% url 'dashboard' %}">Dashboard</a><a href="{% url 'logout' %}">Logout</a>
+      {% else %}<a href="{% url 'register' %}">Register</a><a href="{% url 'login' %}">Login</a>{% endif %}
+    </span>
+  </nav>
+  <main>
+    {% for message in messages %}<div class="message">{{ message }}</div>{% endfor %}
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>
